@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Denúncia GHPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <img src="logo.png" alt="Logo GHPC Group" class="logo">
+            <h1>Canal de Denúncia</h1>
+            <p>Seu relato é totalmente anônimo e seguro.</p>
+        </header>
+
+        <form id="denunciaForm">
+            <div class="input-group">
+                <label for="categoria">Categoria da Ocorrência</label>
+                <select id="categoria" required>
+                    <option value="">Selecione...</option>
+                    <option value="assedio">Assédio ou Discriminação</option>
+                    <option value="fraude">Fraude ou Corrupção</option>
+                    <option value="seguranca">Segurança do Trabalho</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="relato">Descrição dos Fatos</label>
+                <textarea id="relato" rows="6" placeholder="Detalhe o máximo possível o ocorrido..." required></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="local">Local/Departamento</label>
+                <input type="text" id="local" placeholder="Ex: Galpão A, RH, Financeiro...">
+            </div>
+
+            <button type="submit" id="btnEnviar">Enviar Denúncia Anônima</button>
+        </form>
+
+        <div class="consulta-container">
+            <hr class="divisor">
+            <h3>Já fez uma denúncia?</h3>
+            <p>Insira seu protocolo para verificar o andamento:</p>
+            
+            <div class="input-group-inline">
+                <input type="text" id="inputProtocolo" placeholder="Ex: 4K8LW" maxlength="6">
+                <button type="button" id="btnConsultar">Consultar</button>
+            </div>
+
+            <div id="resultadoConsulta" class="hidden">
+                <div class="status-card">
+                    <p><strong>Status Atual:</strong> <span id="statusTexto">---</span></p>
+                    <p><small>Última atualização: <span id="dataAtualizacao">--/--/--</span></small></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="sucessoMsg" class="hidden">
+            <div class="card-sucesso">
+                <h3>Enviado com sucesso!</h3>
+                <p>Anote seu protocolo de acompanhamento:</p>
+                <strong id="protocoloNum">-----</strong>
+            </div>
+        </div>
+    </div>
+
+    <footer style="width: 100%; text-align: center; padding: 20px 0; margin-top: 20px;">
+        <a href="login.html" style="color: #bdc3c7; text-decoration: none; font-size: 0.75rem; font-family: sans-serif; letter-spacing: 1px; text-transform: uppercase;">
+        🔒 Área Restrita
+        </a>
+    </footer>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
